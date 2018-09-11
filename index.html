@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voter Third Party Registration Form</title>
+    <style>
+    label {
+        font-size: 25px;
+    }
+    input {
+        border: 3px solid #555;
+        border-radius: 4px;
+
+
+    }
+
+    span#label {
+        color: blue;
+        padding: 20px;
+        margin-right: 50px;
+    }
+    </style>
+</head>
+<body>
+    <header role="banner">
+<h1>Voter Third Party Registration Form</h1>
+    </header>
+    <section role="form-section">
+
+        <form action="" role="registration-form">
+
+                <span id="label"> <label for="First-Name"> First Name</label> </span>  <span id="inputs"><input type="text" placeholder="Enter First Name" autofocus required autocomplete="on"></span> <br> 
+
+                <span id="label"> <label for="Last-Name"> Last Name</label> </span>  <span id="inputs"><input type="text" placeholder="Enter Last Name" required autocomplete="off"></span>  <br>
+                
+                <span id="label"> <label for="Date of Birth"> Date of Birth</label> </span>  <span id="inputs"><input id="dob" name="dob" type="date" required>
+                </span>  <br>
+                <span id="label"> <label for="Email"> Email</label> </span>  <span id="inputs"><input type="email" name="email" required>
+                </span>  <br>
+                <span id="label"> <label for="Address Street">Enter Address</label> </span>  <span id="inputs"><input type="text" placeholder="Enter Street" required></span>  
+                  <span id="inputs"><input type="text" placeholder="Enter City" autocomplete="on"></span>  
+                  <span id="inputs"><input type="text" list="states" placeholder="select State" required>
+                    <datalist id="states">
+                        <option value="CA"></option>
+                        <option value="IL"></option>
+                    </datalist>
+                </span>  
+                <br>
+                <span id="label"> <label for="Near By vote location">Select your vote location range in Miles</label> </span>  <span id="inputs"><input id="skill" type="range" min="1" max="10" value="0" required></span><br>
+
+                <span id="label"> <label for="Enter Password">Enter Password</label> </span>  <span id="inputs"><input id="password" type="password" placeholder="Enter password" required></span>
+
+                <br>
+            <span id="label"> <label for="url">Personal Url</label></span> <span id="inputs"><input type="url" name="url" placeholder="Enter Url" required> </span>
+
+            <h4>Security Questions</h4>
+           <label for="security question"> which Color Do you like ? </label> <input id="color" name="color" type="color" placeholder="Select Color" required><br>
+           <label for="security question"> which Week is the best week you like ? </label> <input id="vacation" name="vacation" type="week" required><br>
+
+           
+           <label for="security question"> which Month Do you like ? </label> 
+           <input id="expiry" name="expiry" type="month" required><br>
+
+           <br>
+            <label for="expired info"> When do you want this form to be expired automatically?</label>
+            <input id="startdate" name="startdate" min="2020-01-01" max="2023-01-01" type="date">
+
+<br>
+          <label for="disclamiair"><input type="checkbox" name="confirm" required> Agree that you are submitting the form at this time </label> <input id="arrival-time" name="arrival-time " type="datetime-local"> 
+
+  <input type="submit" name="submit" id="submit" onclick="validate()">
+
+
+        </form>
+    </section>
+    <script>
+    function validate() {
+    
+var inputs = document.querySelectorAll('input[list]');
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('change', function() {
+    var optionFound = false,
+      datalist = this.list;
+    for (var j = 0; j < datalist.options.length; j++) {
+        if (this.value == datalist.options[j].value) {
+            optionFound = true;
+            break;
+        }
+    }
+     if (!optionFound) {
+        alert('Please select a valid value.');
+
+    } 
+  });
+}
+
+    }
+    </script>
+</body>
+</html> 
