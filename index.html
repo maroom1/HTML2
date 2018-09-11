@@ -15,6 +15,23 @@
 
 
     }
+    input:required {
+
+background-color: lightyellow;
+
+}
+input:required:invalid {
+
+background-color:lightcoral;
+
+}
+
+input:required:valid {
+
+background-color:lightgreen;
+
+}
+
 
     span#label {
         color: blue;
@@ -31,7 +48,7 @@
 
         <form action="" role="registration-form">
 
-                <span id="label"> <label for="First-Name"> First Name</label> </span>  <span id="inputs"><input type="text" placeholder="Enter First Name" autofocus required autocomplete="on"></span> <br> 
+                <span id="label"> <label for="First-Name"> First Name</label> </span>  <span id="inputs"><input type="text" placeholder="Enter First Name" autofocus required autocomplete="on" aria-required="true"></span> <br> 
 
                 <span id="label"> <label for="Last-Name"> Last Name</label> </span>  <span id="inputs"><input type="text" placeholder="Enter Last Name" required autocomplete="off"></span>  <br>
                 
@@ -47,6 +64,8 @@
                         <option value="IL"></option>
                     </datalist>
                 </span>  
+
+                <span id="inputs"> <input type="text" pattern="(\d{5}([\-]\d{4})?)                   " required></span>
                 <br>
                 <span id="label"> <label for="Near By vote location">Select your vote location range in Miles</label> </span>  <span id="inputs"><input id="skill" type="range" min="1" max="10" value="0" required></span><br>
 
@@ -54,6 +73,9 @@
 
                 <br>
             <span id="label"> <label for="url">Personal Url</label></span> <span id="inputs"><input type="url" name="url" placeholder="Enter Url" required> </span>
+<br>
+            <span id="label"> <label for="upload">Upload image:</label> </span>
+<input type="file" id="upload" name="img" multiple>
 
             <h4>Security Questions</h4>
            <label for="security question"> which Color Do you like ? </label> <input id="color" name="color" type="color" placeholder="Select Color" required><br>
